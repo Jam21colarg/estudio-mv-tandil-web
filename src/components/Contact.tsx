@@ -99,7 +99,7 @@ const Contact = () => {
                     name="phone"
                     type="tel"
                     required
-                    placeholder="+54 249 123-4567"
+                    placeholder="+54 249 449-2375"
                     className="border-border focus:ring-primary"
                   />
                 </div>
@@ -153,8 +153,8 @@ const Contact = () => {
                   <div>
                     <h4 className="font-semibold text-primary">Dirección</h4>
                     <p className="text-muted-foreground">
-                      Avenida Avellaneda 966<br />
-                      Tandil, Buenos Aires
+                      Avellaneda 966, Tandil<br />
+                      Buenos Aires, Argentina
                     </p>
                   </div>
                 </div>
@@ -163,12 +163,14 @@ const Contact = () => {
                   <Phone className="w-6 h-6 text-accent mt-1 flex-shrink-0" />
                   <div>
                     <h4 className="font-semibold text-primary">Teléfono</h4>
-                    <a 
-                      href="tel:+542494492375" 
-                      className="text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      +54 249 4492375
-                    </a>
+                    <div className="text-muted-foreground">
+                      <a href="tel:+542494492375" className="hover:text-primary transition-colors block">
+                        +54 249 4492375
+                      </a>
+                      <a href="tel:+542494250486" className="hover:text-primary transition-colors block">
+                        +54 249 4250486
+                      </a>
+                    </div>
                   </div>
                 </div>
 

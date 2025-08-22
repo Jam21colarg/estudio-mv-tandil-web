@@ -32,13 +32,18 @@ const Footer = () => {
             <div className="space-y-3 text-white/80">
               <div className="flex items-center space-x-3">
                 <MapPin className="w-5 h-5 flex-shrink-0" />
-                <span>Avenida Avellaneda 966, Tandil</span>
+                <span>Avellaneda 966, Tandil, Buenos Aires, Argentina</span>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="w-5 h-5 flex-shrink-0" />
-                <a href="tel:+542494492375" className="hover:text-accent transition-colors">
-                  +54 249 4492375
-                </a>
+                <div>
+                  <a href="tel:+542494492375" className="hover:text-accent transition-colors block">
+                    +54 249 4492375
+                  </a>
+                  <a href="tel:+542494250486" className="hover:text-accent transition-colors">
+                    +54 249 4250486
+                  </a>
+                </div>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="w-5 h-5 flex-shrink-0" />
