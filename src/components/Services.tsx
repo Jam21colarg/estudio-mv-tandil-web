@@ -1,5 +1,10 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Building, Home, Wrench, ClipboardList, PenTool } from "lucide-react";
+import serviceResidential from "@/assets/service-residential.jpg";
+import serviceCommercial from "@/assets/service-commercial.jpg";
+import serviceRenovation from "@/assets/service-renovation.jpg";
+import serviceDirection from "@/assets/service-direction.jpg";
+import servicePlans from "@/assets/service-plans.jpg";
 
 const Services = () => {
   const services = [
@@ -7,26 +12,31 @@ const Services = () => {
       icon: Home,
       title: "Construcción Residencial",
       description: "Casas familiares, ampliaciones y construcciones desde cero con los más altos estándares de calidad.",
+      image: serviceResidential,
     },
     {
       icon: Building,
-      title: "Construcción Comercial",
+      title: "Construcción Comercial", 
       description: "Oficinas, locales comerciales y edificios corporativos diseñados para maximizar la funcionalidad.",
+      image: serviceCommercial,
     },
     {
       icon: Wrench,
       title: "Remodelaciones",
       description: "Renovamos y modernizamos espacios existentes, dándoles nueva vida y funcionalidad.",
+      image: serviceRenovation,
     },
     {
       icon: ClipboardList,
       title: "Dirección Técnica",
       description: "Supervisión profesional de obras, garantizando cumplimiento de normas y plazos establecidos.",
+      image: serviceDirection,
     },
     {
       icon: PenTool,
       title: "Diseño de Planos",
       description: "Proyectos arquitectónicos detallados, planos municipales y documentación técnica completa.",
+      image: servicePlans,
     },
   ];
 
@@ -46,18 +56,26 @@ const Services = () => {
           {services.map((service, index) => (
             <Card 
               key={index} 
-              className="bg-card hover:shadow-card transition-all duration-300 border-0 group hover:-translate-y-1"
+              className="bg-card hover:shadow-card transition-all duration-300 border-0 group hover:-translate-y-1 overflow-hidden"
             >
-              <CardHeader className="text-center pb-6">
-                <div className="mx-auto mb-4 w-16 h-16 bg-gradient-to-br from-primary to-primary-light rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <service.icon className="w-8 h-8 text-white" />
+              <div className="relative h-48 overflow-hidden">
+                <img 
+                  src={service.image} 
+                  alt={service.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-primary/60 group-hover:bg-primary/40 transition-colors duration-300"></div>
+                <div className="absolute top-4 left-4 w-12 h-12 bg-white/90 rounded-full flex items-center justify-center">
+                  <service.icon className="w-6 h-6 text-primary" />
                 </div>
+              </div>
+              <CardHeader className="pb-4">
                 <CardTitle className="text-xl font-bold text-primary group-hover:text-primary-light transition-colors">
                   {service.title}
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <CardDescription className="text-center text-muted-foreground leading-relaxed">
+                <CardDescription className="text-muted-foreground leading-relaxed">
                   {service.description}
                 </CardDescription>
               </CardContent>
